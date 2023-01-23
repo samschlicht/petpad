@@ -1,12 +1,22 @@
-.navbar-lewagon {
+// TODO: figure out how to import petpad colours
+
+.navbar-petpad {
   justify-content: space-between;
-  background: white;
+  background: #CCCCCCFF;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-petpad .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-petpad .navbar-brand img {
   width: 40px;
+}
+
+.navbar-petpad .nav-link {
+  color: black;
+
+  &:hover {
+    color: #FA009CFF;
+  }
 }

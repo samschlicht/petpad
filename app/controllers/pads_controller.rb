@@ -17,4 +17,10 @@ class PadsController < ApplicationController
   def destroy
   end
 
+  private
+
+  def strong_params
+    params.require(:pad).permit(:address, :title, :description, :price_per_night, :capacity, :availability, :photo)
+  end
+
 end

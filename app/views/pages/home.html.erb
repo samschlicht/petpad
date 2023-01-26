@@ -1,2 +1,13 @@
 <h1>Pages#home</h1>
 <p>Index or landing page</p>
+
+<% Booking.each do %>
+  <%= Booking.user.first_name  %>
+<% end %>
+
+<%# validate :end_date_is_after_start_date %>
+<%# validates :start_date, presence: true %>
+<%# validates :end_date, presence: true %>
+<%# validates :pet_id, presence: true %>
+<%# validates :user_id, presence: true %>
+<%# private %>

@@ -8,7 +8,8 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.list = @pad
+    @booking.pad = @pad
+    @booking.user = current_user
     @booking.save
     redirect_to pad_path(@pad)
     booking_policy_authorize
@@ -17,7 +18,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permi(:number_of_pets, :start_date, :end_date, :comment, :status, :user_id)
+    params.require(:booking).permit(:number_of_pets, :start_date, :end_date, :comment, :status, :user_id)
   end
 
   def set_pad

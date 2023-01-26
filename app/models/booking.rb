@@ -6,8 +6,8 @@ class Booking < ApplicationRecord
 
   validates :start_date, presence: true
   validates :end_date, presence: true
-  validates :pet_id, presence: true
-  validates :user_id, presence: true
+  validates :pad, presence: true
+  validates :user, presence: true
 
   private
   def end_date_is_after_start_date

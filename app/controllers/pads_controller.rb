@@ -8,6 +8,10 @@ class PadsController < ApplicationController
   def edit
   end
 
+  def index
+    @pads = Pad.all
+  end
+
   def show
   end
 

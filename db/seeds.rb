@@ -11,11 +11,12 @@
 # Write 'gem "faker"' in your Gemfile, then bundle install
 
 require 'faker'
+
 Pet.destroy_all
 Pad.destroy_all
 Booking.destroy_all
 User.destroy_all
-# List.destroy_all
+
 puts 'destroying everything...'
 
 5.times do

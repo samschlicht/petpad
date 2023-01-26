@@ -3,9 +3,16 @@ class PadsController < ApplicationController
 
   def new
     pad_policy_authorize
+    @pad = Pad.new
   end
 
   def create
+    @pad = Pad.new(pad_params)
+    if @pad.save
+      redirect_to @pad
+    else
+      render :new
+    end
   end
 
   def edit

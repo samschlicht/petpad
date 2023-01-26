@@ -12,10 +12,10 @@
 
 require 'faker'
 
-User.destroy_all
+Booking.destroy_all
 Pet.destroy_all
 Pad.destroy_all
-Booking.destroy_all
+User.destroy_all
 # List.destroy_all
 puts 'destroying everything...'
 

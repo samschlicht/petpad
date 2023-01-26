@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :pads do
     resources :bookings, only: [:new, :create]
-  # Defines the root path route ("/")
-  # root "articles#index"
+    # Defines the root path route ("/")
+    # root "articles#index"
   end
   resources :bookings, only: [:destroy, :index, :show, :edit]
   resources :pets

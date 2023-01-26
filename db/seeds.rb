@@ -15,7 +15,8 @@ require 'faker'
 Pet.destroy_all
 Pad.destroy_all
 Booking.destroy_all
-# List.destroy_all
+User.destroy_all
+
 puts 'destroying everything...'
 
 5.times do

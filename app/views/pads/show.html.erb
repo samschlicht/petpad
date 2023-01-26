@@ -1,0 +1,23 @@
+  <h1 class="text-center">Pad Details</h1>
+
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-striped">
+        <tbody>
+          <tr>
+            <th>Title</th>
+            <td><%= @pad.title %></td>
+          </tr>
+          <tr>
+            <th>Location</th>
+            <td><%= @pad.address %></td>
+          </tr>
+          <tr>
+            <th>Owner</th>
+            <td><%= @pad.user.email %></td>
+            <td><%= @pad.user.name %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

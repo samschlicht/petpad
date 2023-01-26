@@ -12,7 +12,7 @@
 
 require 'faker'
 
-User.destroy_all
+
 Pet.destroy_all
 Pad.destroy_all
 Booking.destroy_all

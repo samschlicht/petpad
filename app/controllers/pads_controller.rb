@@ -10,6 +10,10 @@ class PadsController < ApplicationController
   def edit
   end
 
+  def index
+    @pads = Pad.all
+  end
+
   def show
     @pad = Pad.find_by(id: params[:id])
     if @pad.nil?

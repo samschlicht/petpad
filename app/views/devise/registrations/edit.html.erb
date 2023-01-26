@@ -13,6 +13,8 @@
                 autofocus: true,
                 input_html: { autocomplete: "email" }%>
     <%= f.input :email, required: true, autofocus: true %>
+    <%= f.input :photo, as: :file,
+                required: true %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
@@ -32,7 +34,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+    <%= f.button :submit, "Update", class: "btn" %>
   </div>
 <% end %>
 

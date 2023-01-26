@@ -12,7 +12,6 @@
 
 require 'faker'
 
-
 Pet.destroy_all
 Pad.destroy_all
 Booking.destroy_all
@@ -52,7 +51,6 @@ puts 'created 5 pets for the 5 users!'
   )
 end
 puts 'created 5 pads for the 5 users!'
-
 
 # Future random images
 # https://source.unsplash.com/random/

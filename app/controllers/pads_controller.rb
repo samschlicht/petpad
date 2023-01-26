@@ -2,9 +2,16 @@ class PadsController < ApplicationController
   # before_action :set_list
 
   def new
+    @pad = Pad.new
   end
 
   def create
+    @pad = Pad.new(pad_params)
+    if @pad.save
+      redirect_to @pad
+    else
+      render :new
+    end
   end
 
   def edit

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "pages#home"
+  root to: "pads#index"
   get "/about", to: "pages#about"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :pads do

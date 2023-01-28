@@ -30,6 +30,7 @@ class PadsController < ApplicationController
       flash[:alert] = "Pad not found"
       redirect_to pads_path
     end
+    @booking = Booking.new
   end
 
   def update

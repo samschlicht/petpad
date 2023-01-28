@@ -15,9 +15,10 @@
           <tr>
             <th>Owner</th>
             <td><%= @pad.user.email %></td>
-            <td><%= @pad.user.name %></td>
+            <td><%= @pad.user.first_name %></td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
+  <%= link_to "Book Now", new_pad_booking_path(@pad), class: "btn" %>

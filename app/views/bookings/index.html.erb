@@ -10,15 +10,19 @@
           <p class="filler">
             <div class="cards">
               <div class="card-category">
-                  <p>Name: <%= booking.pad.title.capitalize %></p>
-                  <p>Address: <%= booking.pad.address %></p>
-                  <p>Comment: <%= booking.comment %></p>
-                  <p>Status: <%= booking.status %> Pending...</p>
-                  <img src="https://source.unsplash.com/random/"/style="object-fit:contain;
-                    width:200px;
-                    height:300px;
-                    border: solid 1px #CCC"/>
-                  <i class="fa-solid fa-file-pen"></i>
+                  <div class="d-flex mb-2">
+                  <%= image_tag "modern-dog-kennel-au.jpg", class: "pet-image" %>
+                    <div>
+                      <p>Name: <%= booking.pad.title.capitalize %></p>
+                      <p>Address: <%= booking.pad.address %></p>
+                      <p>Comment: <%= booking.comment %></p>
+                      <p>Status: <%= booking.status %> Pending...</p>
+                    </div>
+                  </div>
+
+
+
+
                   <p><% 50.times do || %>
                   <i class="fa-solid fa-paw fa-bounce"></i>
                   <% end %></p>

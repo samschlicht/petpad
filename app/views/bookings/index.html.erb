@@ -1,4 +1,4 @@
-<p>This is the Bookings Index Page</p>
+<p>These are your bookings, <%= user.first_name %>!</p>
 <% @bookings.each do |booking| %>
   <%= booking.pad.title %>
   <%= booking.pad.address %>

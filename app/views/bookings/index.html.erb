@@ -1,0 +1,7 @@
+<p>This is the Bookings Index Page</p>
+<% @bookings.each do |booking| %>
+  <%= booking.pad.title %>
+  <%= booking.pad.address %>
+  <%= booking.comment %>
+  <%= booking.status %>
+<% end %>

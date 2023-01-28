@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_pad, only: [:new, :create]
+  before_action :set_pad, only: %i[new create]
 
   def new
     @booking = Booking.new
@@ -13,6 +13,10 @@ class BookingsController < ApplicationController
     @booking.save
     redirect_to pad_path(@pad)
     booking_policy_authorize
+  end
+
+  def index
+    @bookings = policy_scope(Booking)
   end
 
   private

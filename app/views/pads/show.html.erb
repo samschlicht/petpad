@@ -14,9 +14,12 @@
           </tr>
           <tr>
             <th>Owner</th>
-            <td><%= @pad.user.email %></td>
-            <td><%= @pad.user.first_name %></td>
+            <td><%= @pad.user.first_name + " " + @pad.user.last_name %></td>
           </tr>
+          <tr>
+            <th>Email</th>
+            <td><%= @pad.user.email %></td>
+        </tr>
         </tbody>
       </table>
     </div>

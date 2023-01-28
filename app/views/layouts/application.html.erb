@@ -16,9 +16,6 @@
     <%= render "shared/flashes" %>
     <div class="container py-3">
       <%= yield %>
-      <% if user_signed_in? %>
-        <h2>Hi <%= current_user.email %> 👋</h2>
-      <% end %>
     </div>
   </body>
 </html>

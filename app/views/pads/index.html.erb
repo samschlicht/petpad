@@ -7,7 +7,7 @@
           <h5 class="card-title"><%= pad.title %></h5>
           <p class="card-text"><%= pad.description %><p>
           <hr>
-          <div class="btn">Book Now</div>
+          <%= link_to "Book Now", new_pad_booking_path(pad), class: "btn" %>
           <hr>
           <div class="d-flex justify-content-between">
             <h5>$<%= pad.price_per_night %></h5>

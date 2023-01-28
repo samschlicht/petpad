@@ -1,5 +1,7 @@
 <p>These are your bookings, <%= current_user.first_name %>!</p>
-<p><%= "*" * 50 %></p>
+<p><% 50.times do || %>
+<i class="fa-solid fa-paw fa-bounce"></i>
+<% end %></p>
 <div= class="wrap">
   <div class="container">
     <% @bookings.each do |booking| %>
@@ -12,10 +14,14 @@
                   <p>Address: <%= booking.pad.address %></p>
                   <p>Comment: <%= booking.comment %></p>
                   <p>Status: <%= booking.status %> Pending...</p>
-                  <img src="https://source.unsplash.com/random/"/>
-                  <%= image_tag 'modern-dog-kennel-au.jpg' %>
+                  <img src="https://source.unsplash.com/random/"/style="object-fit:contain;
+                    width:200px;
+                    height:300px;
+                    border: solid 1px #CCC"/>
                   <i class="fa-solid fa-file-pen"></i>
-                  <p><%= "*" * 50 %></p>
+                  <p><% 50.times do || %>
+                  <i class="fa-solid fa-paw fa-bounce"></i>
+                  <% end %></p>
                 <% end %>
                     </div>
                     </div>
@@ -23,8 +29,3 @@
     </div>
   </div>
 </div>
-
-<% 50.times do || %>
-
-<i class="fa-solid fa-paw fa-bounce"></i>
-<% end %>

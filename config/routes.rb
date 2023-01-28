@@ -8,7 +8,6 @@ Rails.application.routes.draw do
     # Defines the root path route ("/")
     # root "articles#index"
   end
-  resources :bookings, only: [:destroy, :index, :show, :edit]
+  resources :bookings, only: [:destroy, :index, :show, :update]
   resources :pets
 end
-# line 11 edit should be update

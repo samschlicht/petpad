@@ -1,43 +1,26 @@
-  <h1 class="text-center">Pad Details</h1>
 
-  <div align="middle">
-  <%= image_tag("modern-dog-kennel-au.jpg", class: "paw-star") %>
-  </div>
-
+<div class="container">
   <div class="row">
-    <div class="col-md-12">
-      <table class="table table-striped">
-        <tbody>
-          <tr>
-            <th>Title</th>
-            <td><%= @pad.title %></td>
-          </tr>
-          <tr>
-            <th>Location</th>
-            <td><%= @pad.address %></td>
-          </tr>
-          <tr>
-            <th>Owner</th>
-            <td><%= @pad.user.first_name + " " + @pad.user.last_name %></td>
-          </tr>
-          <tr>
-            <th>Email</th>
-            <td><%= @pad.user.email %></td>
-        </tr>
-          <tr>
-            <th>Rating</th>
-            <td>
-              <span style="color: #FA009C;">
-                <i class="fa-solid fa-paw fa-bounce"></i>
-                <i class="fa-solid fa-paw fa-bounce"></i>
-                <i class="fa-solid fa-paw fa-bounce"></i>
-            </td>
-        </tr>
-        </tbody>
-      </table>
+    <div class="col-md-4">
+        <%= image_tag("modern-dog-kennel-au.jpg", class: "img-thumbnail rounded-lg p-4 pad-image" ) %>
+    </div>
+
+    <div class="col-md-8">
+      <h2 class="pad-title"> <%= @pad.title %> </h2>
+      <p class="pad-address"> <%= @pad.address %> </p>
+      <p><%= @pad.user.first_name + " " + @pad.user.last_name %></p>
+      <p class="pad-email"> <%= @pad.user.email %> </p>
+      <span style="color: #FA009C;">
+        <i class="fa-solid fa-paw fa-bounce"></i>
+        <i class="fa-solid fa-paw fa-bounce"></i>
+        <i class="fa-solid fa-paw fa-bounce"></i>
+      <div class="div">
+       <%= link_to "Book Now", new_pad_booking_path(@pad), class: "btn" %>
+      <%= link_to "Back to Pads", pads_path, class: "btn" %>
+      </div>
     </div>
   </div>
-
+</div>
 <div class="bg-white rounded p-3 shadow">
         <h3> Make a new booking </h3>
         <%= simple_form_for [@pad, @booking] do |f| %>

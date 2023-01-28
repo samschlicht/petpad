@@ -26,11 +26,10 @@ class PadsController < ApplicationController
 
   def show
     @pad = Pad.find_by(id: params[:id])
-    authorize @pad
+    pad_policy_authorize
     if @pad.nil?
       flash[:alert] = "Pad not found"
       redirect_to pads_path
-
     end
   end
 

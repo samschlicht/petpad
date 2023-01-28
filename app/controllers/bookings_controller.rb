@@ -11,12 +11,15 @@ class BookingsController < ApplicationController
     @booking.pad = @pad
     @booking.user = current_user
     @booking.save
-    redirect_to pad_path(@pad)
+    redirect_to bookings_path(@pad)
     booking_policy_authorize
   end
 
   def index
     @bookings = policy_scope(Booking)
+  end
+
+  def update
   end
 
   private

@@ -7,10 +7,20 @@
           <h5 class="card-title"><%= pad.title %></h5>
           <p class="card-text"><%= pad.description %><p>
           <hr>
-          <%= link_to "Book Now", new_pad_booking_path(pad), class: "btn" %>
+          <div class="d-flex justify-content-between">
+            <%= link_to "Book Now", new_pad_booking_path(pad), class: "btn" %>
+            <%= link_to "Details", pad_path(pad), class: "btn" %>
+          </div>
           <hr>
           <div class="d-flex justify-content-between">
             <h5>$<%= pad.price_per_night %></h5>
+            <div>
+              <% rand(1..5).times  do |i| %>
+                <span style="color: #FA009C;">
+                  <i class="fa-solid fa-paw fa-bounce"></i>
+                </span>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>

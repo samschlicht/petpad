@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_pad, only: %i[new create index]
+  before_action :set_pad, only: %i[new create]
 
   def new
     @booking = Booking.new
@@ -16,17 +16,7 @@ class BookingsController < ApplicationController
   end
 
   def index
-    # if set_pad == true
-
-    @booking = Booking.where(user: current_user)
-    # @booking = Booking.all
-
-    # @booking = policy_scope(Booking)
-    # there is no id because there is no booking, so conditional?
-    # else
-    # redirect_to new_booking_path(user: current_user)
-    # booking_policy_authorize
-    # end
+    @bookings = policy_scope(Booking)
   end
 
   private

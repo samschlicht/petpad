@@ -1,2 +1,7 @@
 <p>This is the Bookings Index Page</p>
-<%= link_to "New Booking", new_booking_path if policy(Booking).new? %>
+<% @bookings.each do |booking| %>
+  <%= booking.pad.title %>
+  <%= booking.pad.address %>
+  <%= booking.comment %>
+  <%= booking.status %>
+<% end %>

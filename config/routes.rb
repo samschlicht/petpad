@@ -11,3 +11,4 @@ Rails.application.routes.draw do
   resources :bookings, only: [:destroy, :index, :show, :edit]
   resources :pets
 end
+# line 11 edit should be update

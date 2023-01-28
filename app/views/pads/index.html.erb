@@ -2,7 +2,7 @@
   <% @pads.each do |pad| %>
     <div class="col-4 mb-3">
       <div class="card">
-        <%= image_tag (@padpictures.sample), width: 100, class: "card-img-top" %>
+        <%= image_tag @padpictures.sample, width: 100, class: "card-img-top" %>
         <div class="card-body">
           <h5 class="card-title"><%= pad.title %></h5>
           <p class="card-text"><%= pad.description %><p>

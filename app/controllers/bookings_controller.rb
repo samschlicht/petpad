@@ -16,7 +16,17 @@ class BookingsController < ApplicationController
   end
 
   def index
+    # if set_pad == true
+
     @booking = Booking.where(user: current_user)
+    # @booking = Booking.all
+
+    # @booking = policy_scope(Booking)
+    # there is no id because there is no booking, so conditional?
+    # else
+    # redirect_to new_booking_path(user: current_user)
+    # booking_policy_authorize
+    # end
   end
 
   private

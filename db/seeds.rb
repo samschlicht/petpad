@@ -12,14 +12,14 @@
 
 require 'faker'
 
-Pet.destroy_all
-Pad.destroy_all
 Booking.destroy_all
+Pad.destroy_all
+Pet.destroy_all
 User.destroy_all
 
 puts 'destroying everything...'
 
-5.times do
+10.times do
   User.create!(
     first_name: Faker::Name.unique.first_name,
     last_name: Faker::Name.unique.last_name,
@@ -27,10 +27,9 @@ puts 'destroying everything...'
     password: Faker::Internet.unique.password
   )
 end
-# description: Faker::Movies::Lebowski.unique.quote
-puts 'created 5 users!'
+puts 'created 10 users!'
 
-5.times do
+10.times do
   Pet.create!(
     user: User.all.sample,
     name: Faker::Creature::Dog.unique.name,
@@ -38,20 +37,20 @@ puts 'created 5 users!'
     comments: Faker::Creature::Bird.unique.emotional_adjective
   )
 end
-puts 'created 5 pets for the 5 users!'
+puts 'created 10 pets for the 10 users!'
 
-5.times do
+10.times do
   Pad.create!(
     user: User.all.sample,
-    address: Faker::Address.unique.street_address,
-    title: Faker::Emotion.unique.noun,
-    description: Faker::Movies::Lebowski.unique.quote,
+    address: Faker::Address.unique.street_address + ", " + Faker::Address.unique.city,
+    title: ['Happy Villa', 'Hold-Your-Nose Stables', 'The Lap of Luxury', 'The Dirty Littler Tray', 'Leave Your Pet and Walk Away', 'The Shitbox', 'Marvellous Menagerie', 'Crib Chameleon', 'The Hungry Snake', 'Velvet Cushions', 'Saucer From Heaven', 'Gerbil Redoubt', 'The Happy Hippo', 'Animal Allotments', 'High-Security Prison for Doomed Pets'].sample,
+    description: ['Pack up your troubles and come to pet heaven.', 'No snakes allowed.', 'I got 99 problems but a bitch aint one.', 'Home is where I lay my cat.', 'Catnip on tap, no tabbies please.', 'No lazy sloths, pets clean up after themselves.', 'A civilized hangout for pets who like to read. No mobile phones.', 'Swimming pool and drone flying for more skilled animals.', 'Serious discipline for your unruly little smashers.', 'Foie gras on the reg', 'Absolutely under no circumstances will we accept snakes or dogs.', 'We expect pets to work for their supper. More of a factory than a holiday home — good for ill-disciplined little devils'].sample,
     price_per_night: (0...100).to_a.sample,
     capacity: (0...10).to_a.sample,
     availability: true
   )
 end
-puts 'created 5 pads for the 5 users!'
+puts 'created 10 pads for the 10 users!'
 
 # Future random images
 # https://source.unsplash.com/random/

@@ -12,8 +12,8 @@
                   <p>Address: <%= booking.pad.address %></p>
                   <p>Comment: <%= booking.comment %></p>
                   <p>Status: <%= booking.status %> Pending...</p>
-                  <img src="(https://source.unsplash.com/random/)"/>
-                  <img src="/assets/images/modern-dog-kennel-au.jpg"/>
+                  <img src="https://source.unsplash.com/random/"/>
+                  <%= image_tag 'modern-dog-kennel-au.jpg' %>
                   <i class="fa-solid fa-file-pen"></i>
                   <p><%= "*" * 50 %></p>
                 <% end %>
@@ -24,7 +24,7 @@
   </div>
 </div>
 
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/)">
-</div>
+<% 50.times do || %>
 
-<i class="fa-thin fa-paw"></i>
+<i class="fa-solid fa-paw fa-bounce"></i>
+<% end %>

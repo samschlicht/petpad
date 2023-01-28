@@ -20,8 +20,7 @@ class PadsController < ApplicationController
 
   def index
     @padpictures = ['71MboshaisL.jpg', '71xnX1sKTTS._AC_SL1500_.jpg', '628ee6c06a5af245146626_w803h620.webp', '1000_F_275733004_ASmLOPFcapcxHg6xdui5B7DNc5HM2MD3.jpg', 'constructed-with-rot-resistant-fir-timber-requires-very-little-maintenance.jpg', 'd8297fabeda7f1880ef08532befcfe4626-petsfit-outdoor-triangle-cat-house-.rsquare.w700.jpg.webp', 'Long-Plush-Dog-Bed-Pet-Blanket-Soft-Fleece-Cat-Cushion-Puppy-Chihuahua-Sofa-Mat-Pad-For_1080x.jpg', 'modern-dog-kennel-au.jpg', 's-l500.jpg', 'sloth-forest-scaled.jpg', 'Stacey-Cat-Enclosure.jpg']
-    @pads = Pad.all
-    authorize @pads
+    @pads = policy_scope(Pad)
   end
 
   def show

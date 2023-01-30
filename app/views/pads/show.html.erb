@@ -1,35 +1,57 @@
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-4">
-        <%= image_tag("modern-dog-kennel-au.jpg", class: "img-thumbnail rounded-lg p-4 pad-image" ) %>
-    </div>
-
-    <div class="col-md-8">
-      <h2 class="pad-title"> <%= @pad.title %> </h2>
-      <p class="pad-address"> <%= @pad.address %> </p>
-      <p><%= @pad.user.first_name + " " + @pad.user.last_name %></p>
-      <p class="pad-email"> <%= @pad.user.email %> </p>
-      <span style="color: #FA009C;">
-        <i class="fa-solid fa-paw fa-bounce"></i>
-        <i class="fa-solid fa-paw fa-bounce"></i>
-        <i class="fa-solid fa-paw fa-bounce"></i>
-      <div class="div">
-       <%= link_to "Book Now", new_pad_booking_path(@pad), class: "btn" %>
-      <%= link_to "Back to Pads", pads_path, class: "btn" %>
+<div class="container py-5">
+  <div class="card w-100", style="position: relative">
+    <div class="row g-0">
+      <div class="col-md-4">
+      <% if @pad.photo.key %>
+        <%= cl_image_tag @pad.photo.key, class: "pad-img rounded-start h-100", style: "object-fit: cover" %>
+      <% else %>
+        <%= image_tag @padpictures.sample, class: "pad-img rounded-start h-100", style: "object-fit: cover" %>
+      <% end %>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h2 class="card-title"><%= @pad.title %></h2>
+          <p class="card-text"><%= @pad.address %></p>
+          <p class="card-text"><strong>Description</strong><br><%= @pad.description %></p>
+          <p class="card-text"><strong>Capacity</strong><br><%= @pad.capacity %></p>
+          <div class="updated">
+            <p class="card-text"><small class="text-muted">Last updated <%= ((Time.now - @pad.updated_at)/60).round %> minutes ago</small></p>
+          </div>
+          <div class="circle">
+            $<%= @pad.price_per_night.to_i %>
+          </div>
+          <div class="edit-btn">
+              <% if @pad.user == current_user %>
+              <%= link_to "⟲ Back to Pads", pads_path, class: "btn mx-3" %><%= link_to "Edit", edit_pad_path, class: "btn" %>
+              <% end %>
+          </div>
+          <% if @pad.user == current_user %>
+            <% if @pad.availability %>
+              <div class="availability-true-indicator">
+                <h3 style="display: inline">&nbsp✔︎ AVAILABLE&nbsp</h3>
+              </div>
+            <% else %>
+              <div class="availability-false-indicator">
+                <h3 style="display: inline">&nbsp✖ CURRENTLY UNAVAILABLE&nbsp</h3>
+              </div>
+            <% end %>
+          <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+  <% if @pad.user != current_user %>
+    <div class="bg-white rounded p-3 shadow w-100">
+      <h3>Make a new booking </h3>
+      <%= simple_form_for [@pad, @booking] do |f| %>
+        <%= f.input :number_of_pets %>
+        <%= f.input :start_date, html5: true %>
+        <%= f.input :end_date, html5: true %>
+        <%= f.input :comment %>
+        <%= f.submit "Book This Pad!", class: "btn mb-3" %>
+      <% end %>
+      <%= link_to "⟲ Back to Pads", pads_path, class: "btn" %>
+    </div>
+  <% end %>
 </div>
-<div class="bg-white rounded p-3 shadow">
-        <h3> Make a new booking </h3>
-        <%= simple_form_for [@pad, @booking] do |f| %>
-          <%= f.input :number_of_pets %>
-          <%= f.input :start_date, html5: true %>
-          <%= f.input :end_date, html5: true %>
-          <%= f.input :comment %>
-          <%= f.submit class: "btn btn-flat" %>
-        <% end %>
-
-        <%= link_to "Go back", pads_path,class: "btn" %>
-        </div>

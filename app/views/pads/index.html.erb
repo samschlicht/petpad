@@ -2,15 +2,16 @@
   <% @pads.each do |pad| %>
     <div class="col-4 mb-3">
       <div class="card">
-        <%= image_tag @padpictures.sample, width: 100, class: "card-img-top" %>
+        <% if pad.photo.key %>
+          <%= cl_image_tag pad.photo.key, width: 100, class: "card-img-top" %>
+        <% else %>
+          <%= image_tag @padpictures.sample, width: 100, class: "card-img-top" %>
+        <% end %>
         <div class="card-body">
           <h5 class="card-title"><%= pad.title %></h5>
           <p class="card-text"><%= pad.description %><p>
           <hr>
-          <div class="d-flex justify-content-between">
-            <%= link_to "Book Now", new_pad_booking_path(pad), class: "btn" %>
-            <%= link_to "Details", pad_path(pad), class: "btn" %>
-          </div>
+          <%= link_to "Info & Booking", pad_path(pad), class: "btn" %>
           <hr>
           <div class="d-flex justify-content-between">
             <h5>$<%= pad.price_per_night %></h5>

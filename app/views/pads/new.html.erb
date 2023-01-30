@@ -1,0 +1,20 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <h1>List Your Pad</h1>
+        <%= simple_form_for [@pad] do |f| %>
+          <%= f.input :title, hint: "Give your place a descriptive name!" %>
+          <%= f.input :description, input_html: { maxlength: 150 }, hint: "Tell us about your pad — 150 characters max." %>
+          <%= f.input :capacity, hint: "How many pets can you accommodate?" %>
+          <%= f.input :price_per_night, as: :currency %>
+          <%= f.input :address %>
+          <%= f.input :photo, as: :file %>
+          <%= f.input :availability, label: 'Is your pad available now?', as: :radio_buttons, hint: '(You can change this later on 😉)' %>
+          <%= f.submit "Save Your Pad!", class: "btn mb-3" %>
+        <% end %>
+        <%= link_to "⟲ Back to Pads", pads_path, class: "btn" %>
+      </div>
+    </div>
+  </div>
+</div>

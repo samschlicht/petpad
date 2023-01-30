@@ -1,0 +1,56 @@
+.circle {
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  border-radius: 50%;
+  font-size: 35px;
+  color: white;
+  text-align: center;
+  background: #FA009C;
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+}
+
+.pad-img {
+  max-width: 100%;
+  min-width: 400px;
+  max-height: 400px;
+}
+
+.edit-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.updated {
+  position: absolute;
+  bottom: 8px;
+}
+
+.availability-true-indicator {
+  border: 1px solid #1EDD88;
+  color: #1EDD88;
+  display: inline;
+  border-radius: 2px;
+  position: absolute;
+  bottom: 40px;
+  right: 150px;
+}
+
+.availability-false-indicator {
+  border: 1px solid #FD1015;
+  border-radius: 2px;
+  color: #FD1015;
+  display: inline;
+  border-radius: 2px;
+  position: absolute;
+  bottom: 40px;
+  right: 150px;
+}
+
+.card-text strong {
+  color: #FA009C;
+}
+

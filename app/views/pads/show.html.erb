@@ -13,6 +13,7 @@
           <h2 class="card-title"><%= @pad.title %></h2>
           <p class="card-text"><%= @pad.address %></p>
           <p class="card-text"><strong>Description</strong><br><%= @pad.description %></p>
+          <p class="card-text"><strong>We accomodate</strong><br><%= JSON.parse(@pad.welcome_species).join(', ').capitalize %></p>
           <p class="card-text"><strong>Capacity</strong><br><%= @pad.capacity %></p>
           <div class="updated">
             <p class="card-text"><small class="text-muted">Last updated <%= ((Time.now - @pad.updated_at)/60).round %> minutes ago</small></p>

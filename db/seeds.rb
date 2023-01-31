@@ -21,8 +21,8 @@ puts 'destroying everything...'
 
 10.times do
   User.create!(
-    first_name: Faker::Name.unique.first_name,
-    last_name: Faker::Name.unique.last_name,
+    first_name: Faker::Name.unique.first_name.capitalize,
+    last_name: Faker::Name.unique.last_name.capitalize,
     email: Faker::Internet.unique.email,
     password: Faker::Internet.unique.password
   )
@@ -32,8 +32,8 @@ puts 'created 10 users!'
 10.times do
   Pet.create!(
     user: User.all.sample,
-    name: Faker::Creature::Dog.unique.name,
-    species: ['dog', 'cat', 'bird', 'lizard', 'snake',].sample,
+    name: Faker::Creature::Dog.unique.name.capitalize,
+    species: ['Dog', 'Cat', 'Bird', 'Lizard', 'Snake',].sample,
     comments: ['My pet is my life', 'This is not a pet, this is family!', 'Don"t pet my pet', 'This is the love of my life', 'This is also my support animal', 'My best friend, no doubt about it',].sample
   )
 end
@@ -42,15 +42,21 @@ puts 'created 10 pets for the 10 users!'
 10.times do
   Pad.create!(
     user: User.all.sample,
-    address: ['dog', 'cat', 'bird', 'lizard', 'snake',].sample + ", " + Faker::Address.unique.city,
-    title: ['Happy Villa', 'Hold-Your-Nose Stables', 'The Lap of Luxury', 'The Dirty Litter Tray', 'Leave Your Pet and Walk Away', 'The Shitbox', 'Marvellous Menagerie', 'Crib Chameleon', 'The Hungry Snake', 'Velvet Cushions', 'Saucer From Heaven', 'Gerbil Redoubt', 'The Happy Hippo', 'Animal Allotments', 'High-Security Prison for Doomed Pets', 'A Cell From Home', 'Glorious and Future Pet Re-Education Centre', 'Negligent Manor', 'Pet Retreat Mindful Meditation Centre'].sample,
-    description: ['Pack up your troubles and come to pet heaven.', 'No snakes allowed.', 'I got 99 problems but a bitch aint one.', 'Home is where I lay my cat.', 'Catnip on tap, no tabbies please.', 'No lazy sloths, pets clean up after themselves.', 'A civilized hangout for pets who like to read. No mobile phones.', 'Swimming pool and drone flying for more skilled animals.', 'Serious discipline for your unruly little smashers.', 'Foie gras on the reg.', 'Absolutely under no circumstances will we accept snakes or dogs.', 'We expect pets to work for their supper. More of a factory than a holiday home — good for ill-disciplined little devils.', 'Ask me no questions and I will tell you no lies', 'Teachers of morality for your nihilistic gerbils.', 'Each evening, we eat the weakest pet!'].sample,
+    address: ['Ginza', 'Shibuya', 'Asakusa', 'Shinjuku', 'Harajuku', 'Akihabara', 'Kagurazaka', 'Kichijoji', 'Daikanyama', 'Shimokitazawa', 'Ikebukuro', 'Nakameguro', 'Roppongi', 'Omotesando',].sample + ", " + "Tokyo",
+    title: ['Happy Villa', 'Home away from home', 'The Lap of Luxury', 'The Pet Lounge', 'Leave Your Pet and Walk Away', 'The Club House', 'Marvellous Menagerie', 'Crib Chameleon', 'The Italian Happy Family', 'Velvet Cushions', 'Saucers From Heaven', 'Gerbil Redoubt', 'The Happy Hippo', 'Animal Allotments', 'High End Luxury for Pets', 'A Couch Next Dorr', 'Glorious and Future Pet Home', 'Magnificent Manor', 'Pet Retreat and Meditation Centre'].sample,
+    description: ['Leave your pets in good hands.', 'We also have pets in the back.', '99 reasons to leave your pet here.', 'As safe as safe can be.', 'Lots of room, for your pets too!', 'Lots of experience in cleaning after your pets.', 'Bed and Breakfast for the busy pet owner.', 'Your pets will be loved.', 'We are serious about our pets and also yours.', 'Pet.care that is us.', 'We will love your pets unconditionally.', 'Lots of room for your pets to run and roam.', 'I will love them like my own children.', 'We make your pets our business.', 'All pets are equal!'].sample,
     price_per_night: (0...100).to_a.sample,
     capacity: (0...10).to_a.sample,
-    availability: true
+    availability: true,
+    welcome_species: ['dogs', 'cats', 'birds', 'lizards', 'snakes',].sample(rand(1...3)),
   )
 end
 puts 'created 10 pads for the 10 users!'
 
-# Future random images
-# https://source.unsplash.com/random/
+User.create!(
+  first_name: 'Ander',
+  last_name: 'Lyle',
+  email: 'email@gmail.com',
+  password: '123456'
+)
+puts 'created Ander Lyle!'

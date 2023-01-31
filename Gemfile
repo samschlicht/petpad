@@ -83,4 +83,6 @@ gem "pundit"
 
 gem "cloudinary"
 
+gem "geocoder"
+
 

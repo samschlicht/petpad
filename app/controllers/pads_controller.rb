@@ -27,7 +27,8 @@ class PadsController < ApplicationController
     @markers = @pads.geocoded.map do |pad|
       {
         lat: pad.latitude,
-        lng: pad.longitude
+        lng: pad.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {pad: pad})
       }
     end
   end

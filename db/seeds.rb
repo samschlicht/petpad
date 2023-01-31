@@ -33,8 +33,8 @@ puts 'created 10 users!'
   Pet.create!(
     user: User.all.sample,
     name: Faker::Creature::Dog.unique.name,
-    species: Faker::Creature::Dog.unique.breed,
-    comments: Faker::Creature::Bird.unique.emotional_adjective
+    species: ['dog', 'cat', 'bird', 'lizard', 'snake',].sample,
+    comments: ['My pet is my life', 'This is not a pet, this is family!', 'Don"t pet my pet', 'This is the love of my life', 'This is also my support animal', 'My best friend, no doubt about it',].sample
   )
 end
 puts 'created 10 pets for the 10 users!'
@@ -42,7 +42,7 @@ puts 'created 10 pets for the 10 users!'
 10.times do
   Pad.create!(
     user: User.all.sample,
-    address: Faker::Address.unique.street_address + ", " + Faker::Address.unique.city,
+    address: ['dog', 'cat', 'bird', 'lizard', 'snake',].sample + ", " + Faker::Address.unique.city,
     title: ['Happy Villa', 'Hold-Your-Nose Stables', 'The Lap of Luxury', 'The Dirty Litter Tray', 'Leave Your Pet and Walk Away', 'The Shitbox', 'Marvellous Menagerie', 'Crib Chameleon', 'The Hungry Snake', 'Velvet Cushions', 'Saucer From Heaven', 'Gerbil Redoubt', 'The Happy Hippo', 'Animal Allotments', 'High-Security Prison for Doomed Pets', 'A Cell From Home', 'Glorious and Future Pet Re-Education Centre', 'Negligent Manor', 'Pet Retreat Mindful Meditation Centre'].sample,
     description: ['Pack up your troubles and come to pet heaven.', 'No snakes allowed.', 'I got 99 problems but a bitch aint one.', 'Home is where I lay my cat.', 'Catnip on tap, no tabbies please.', 'No lazy sloths, pets clean up after themselves.', 'A civilized hangout for pets who like to read. No mobile phones.', 'Swimming pool and drone flying for more skilled animals.', 'Serious discipline for your unruly little smashers.', 'Foie gras on the reg.', 'Absolutely under no circumstances will we accept snakes or dogs.', 'We expect pets to work for their supper. More of a factory than a holiday home — good for ill-disciplined little devils.', 'Ask me no questions and I will tell you no lies', 'Teachers of morality for your nihilistic gerbils.', 'Each evening, we eat the weakest pet!'].sample,
     price_per_night: (0...100).to_a.sample,

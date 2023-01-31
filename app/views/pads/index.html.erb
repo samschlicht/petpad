@@ -16,6 +16,7 @@
         <div class="card-body">
           <h5 class="card-title"><%= pad.title %></h5>
           <p class="card-text"><%= pad.description %><p>
+          <p class="card-text">We accomodate: <%= JSON.parse(pad.welcome_species).join(', ').capitalize %></p>
           <hr>
           <%= link_to "Info & Booking", pad_path(pad), class: "btn" %>
           <hr>

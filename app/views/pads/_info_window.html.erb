@@ -1,2 +1,19 @@
-<h2><%= pad.title %></h2>
+<h5><%= link_to pad.title, pad_path(pad), style: 'color:#FA009C; text-decoration:none' %></h5>
 <p><%= pad.address %></p>
+<h5>
+<% if pad.welcome_species.include? 'dogs' %>
+  <%= '🐶'  %>
+<% end %>
+<% if pad.welcome_species.include? 'lizards' %>
+  <%= '🦎'  %>
+<% end %>
+<% if pad.welcome_species.include? 'birds' %>
+  <%= '🦜'  %>
+<% end %>
+<% if pad.welcome_species.include? 'snakes' %>
+  <%= '🐍'  %>
+<% end %>
+<% if pad.welcome_species.include? 'cats' %>
+  <%= '🐈'  %>
+<% end %>
+</h5>

@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:destroy, :index, :show, :update]
   resources :pets
+  get "index", to: "pads#welcome_species"
 end

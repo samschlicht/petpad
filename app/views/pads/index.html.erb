@@ -7,7 +7,7 @@
 <div class="row">
   <% @pads.each do |pad| %>
     <div class="col-4 mb-3">
-      <div class="card">
+      <div class="card", style="position: relative">
         <% if pad.photo.key %>
           <%= cl_image_tag pad.photo.key, width: 100, class: "card-img-top" %>
         <% else %>
@@ -17,21 +17,17 @@
           <h5 class="card-title"><%= pad.title %></h5>
           <p class="card-text"><%= pad.description %><p>
           <p class="card-text">We accomodate: <%= JSON.parse(pad.welcome_species).join(', ').capitalize %></p>
-          <hr>
           <%= link_to "Info & Booking", pad_path(pad), class: "btn" %>
-          <hr>
-          <div class="d-flex justify-content-between">
-            <h5>$<%= pad.price_per_night %></h5>
-            <div>
-              <% rand(1..5).times  do |i| %>
-                <span style="color: #FA009C;">
-                  <i class="fa-solid fa-paw fa-bounce"></i>
-                </span>
-              <% end %>
-            </div>
-          </div>
+          <h5 class="price-circle", style="position:absolute; top: 310px; right: 10px">$<%= pad.price_per_night.round.to_i %></h5>
+<!--            I've commented the rating out until/unless we actually code it!-->
+            <%# rand(1..5).times  do |i| %>
+<!--              <span style="color: #FA009C;">-->
+<!--                <i class="fa-solid fa-paw fa-bounce"></i>-->
+<!--              </span>-->
+            <%# end %>
         </div>
       </div>
     </div>
   <% end %>
 </div>
+

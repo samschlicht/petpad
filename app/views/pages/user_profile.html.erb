@@ -1,0 +1,6 @@
+
+<%=current_user.first_name %>
+
+<% if Pad.find_by(user_id: current_user.id) %>
+        <li class="nav-item">
+          <%= link_to "Manage Bookings", bookings_path, class: "nav-link" %>

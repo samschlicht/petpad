@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
     @booking.pad = @pad
     @booking.user = current_user
     @booking.save
-    redirect_to bookings_path(@pad)
+    redirect_to bookings_path
     booking_policy_authorize
   end
 

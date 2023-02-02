@@ -1,2 +1,20 @@
-<p>Manage bookings </p>
-<%= @bookings %>
+<p> Manage bookings </p>
+<% if @bookings.length > 0 %>
+<ul> <% @bookings.each do |booking| %>
+<li> <%= booking %> </li>
+<div class="d-flex">
+  <%= simple_form_for booking do |f| %>
+    <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
+    <%= f.submit 'Accept', class: 'btn btn-info' %>
+  <% end %>
+
+  <%= simple_form_for booking do |f| %>
+    <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
+    <%= f.submit 'Reject', class: 'btn btn-light' %>
+  <% end %>
+</div>
+
+<% end %> </ul>
+<% else  %>
+<p> You have no bookings 🥲 </p>
+<% end %>

@@ -66,9 +66,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_31_105540) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "welcome_species"
     t.float "latitude"
     t.float "longitude"
-    t.string "welcome_species"
     t.index ["user_id"], name: "index_pads_on_user_id"
   end
 

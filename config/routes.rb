@@ -10,4 +10,7 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:destroy, :index, :show, :update]
   resources :pets
+  namespace :petsitter do
+    resources :bookings, only: :index
+  end
 end

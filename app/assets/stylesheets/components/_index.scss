@@ -4,3 +4,9 @@
 @import "form_legend_clear";
 @import "navbar";
 @import "map";
+
+.card-img-top {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+}

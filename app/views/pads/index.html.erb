@@ -19,7 +19,7 @@
 <!--          <p class="card-text">We accomodate: <%#= JSON.parse(pad.welcome_species).join(', ').capitalize %></p>-->
           <h5 class="price-circle", style="position:absolute; top: 310px; right: 10px">$<%= pad.price_per_night.round.to_i %></h5>
           <div class="div", style="display: inline-block">
-            <%= link_to "Info & Booking", pad_path(pad), class: "btn" %>
+            <br><%= link_to "Info & Booking", pad_path(pad), class: "btn" %>
           </div>
           <div class="div", style="float: right">
             <p class="card-text"><strong>Accommodates</strong></p>

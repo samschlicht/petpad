@@ -72,7 +72,7 @@ class PadsController < ApplicationController
 
   private
   def pad_params
-    params.require(:pad).permit(:address, :title, :description, :price_per_night, :capacity, :availability, :photo)
+    params.require(:pad).permit(:address, :title, :description, :price_per_night, :capacity, :availability, :photo, :welcome_species)
   end
 
   def pad_policy_authorize

@@ -10,6 +10,7 @@
           <%= f.input :price_per_night, as: :currency %>
           <%= f.input :address %>
           <%= f.input :photo, as: :file %>
+          <%= f.input :welcome_species, label: 'What type of pets can you accommodate?', hint: 'E.g., dogs, snakes, cats, etc.' %>
           <%= f.input :availability, label: 'Is your pad available now?', as: :radio_buttons, hint: '(You can change this later on 😉)' %>
           <%= f.submit "Save Your Pad!", class: "btn mb-3" %>
         <% end %>

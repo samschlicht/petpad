@@ -6,6 +6,7 @@
 // External libraries
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome";
+@import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder";
 
 // Your CSS partials
 @import "components/index";
@@ -15,7 +16,8 @@
 @import "components/button";
 @import "components/navbar";
 @import "pages/show";
-@import "components/map";
+@import "components/price-circle";
+
 
 //// petpad colour palette
 //$pp-green: #B6EADA;

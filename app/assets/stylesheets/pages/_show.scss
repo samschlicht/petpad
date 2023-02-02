@@ -1,21 +1,7 @@
-.circle {
-  width: 100px;
-  height: 100px;
-  line-height: 100px;
-  border-radius: 50%;
-  font-size: 35px;
-  color: white;
-  text-align: center;
-  background: #FA009C;
-  position: absolute;
-  bottom: 8px;
-  right: 8px;
-}
-
 .pad-img {
-  max-width: 100%;
-  min-width: 400px;
+  width: 100%;
   max-height: 400px;
+  object-fit: cover;
 }
 
 .edit-btn {

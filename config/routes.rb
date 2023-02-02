@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   resources :pets
   namespace :petsitter do
     resources :bookings, only: :index
+    resources :bookings, only: [:update]
   end
 end

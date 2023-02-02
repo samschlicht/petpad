@@ -1,6 +1,5 @@
 class BookingsController < ApplicationController
   before_action :set_pad, only: %i[new create]
-
   def new
     @booking = Booking.new
     booking_policy_authorize
@@ -17,6 +16,12 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = policy_scope(Booking)
+  end
+
+  def show
+  end
+
+  def edit
   end
 
   def update

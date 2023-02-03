@@ -1,6 +1,10 @@
 
 <%=current_user.first_name %>
 
-<% if Pad.find_by(user_id: current_user.id) %>
-        <li class="nav-item">
-          <%= link_to "Manage Bookings", bookings_path, class: "nav-link" %>
+<% if @pet_sitter %>
+  <%= link_to "Manage Bookings", petsitter_bookings_path, class: "btn btn-primary" %>
+  <%= link_to "View Bookings I Made", bookings_path, class: "btn btn-primary" %>
+
+<% else %>
+  <%= link_to "View Bookings I Made", bookings_path, class: "btn btn-primary" %>
+<% end %>

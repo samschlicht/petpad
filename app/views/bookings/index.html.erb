@@ -41,7 +41,8 @@
                       <p class="card-text"><strong>From:</strong> <%= booking.start_date %></p>
                       <p class="card-text"><strong>To:</strong> <%= booking.end_date %></p>
                       <p class="card-text"><strong>Cost:</strong> $<%= (booking.end_date - booking.start_date).to_f * booking.pad.price_per_night %></p>
-                      <p class= btn btn><strong>Status:</strong> <%= booking.status %> <strong>Pending...</strong></p>
+                      <p class="card-text"><strong>Status:</strong> <%= booking.status %> Pending...</p>
+                      <p class= btn btn><strong>Cancel</strong></p>
                     </div>
                   </div>
 

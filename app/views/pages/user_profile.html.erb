@@ -1,5 +1,20 @@
 
-<%=current_user.first_name %>
+<div class="profile-section">
+  <div class="profile-image">
+    <%= image_tag current_user.photo, class: "profile-pic" %>
+  </div>
+
+  <div class="profile-details">
+    <h2 class="profile-name">
+      <%= current_user.first_name %>
+    </h2>
+
+    <p class="profile-email">
+      <%= current_user.email %>
+    </p>
+
+  </div>
+</div>
 
 <% if @pet_sitter %>
   <%= link_to "Manage Bookings", petsitter_bookings_path, class: "btn btn-primary" %>

@@ -5,6 +5,6 @@ class PagesController < ApplicationController
 
   def user_profile
     @pet_sitter = Pad.find_by(user_id: current_user.id)
-    raise
+
   end
 end

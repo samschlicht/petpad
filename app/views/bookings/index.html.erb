@@ -43,7 +43,7 @@
                       <p class="card-text"><strong>Cost:</strong> $<%= (booking.end_date - booking.start_date).to_f * booking.pad.price_per_night %></p>
                       <p class="card-text"><strong>Status:</strong>
                       <% if booking.pending? %>
-                      <p><strong> Pending...</strong></p>
+                      <%= booking.status %>
                       <% else %>
                       <%= booking.status %>
                       <% end  %></p>

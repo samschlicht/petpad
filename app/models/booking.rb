@@ -9,6 +9,10 @@ class Booking < ApplicationRecord
   validates :pad, presence: true
   validates :user, presence: true
 
+  def pending?
+    status == 'pending'
+  end
+
   private
   def end_date_is_after_start_date
     return if end_date.blank? || start_date.blank?

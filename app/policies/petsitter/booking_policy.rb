@@ -5,4 +5,17 @@ class Petsitter::BookingPolicy < ApplicationPolicy
       scope.joins(:pad).where(pad: { user: user })
     end
   end
+
+  def index?
+    true
+  end
+
+  def update?
+    record.user == user
+  end
+
+  def edit?
+    true
+  end
+
 end

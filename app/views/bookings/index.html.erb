@@ -2,7 +2,7 @@
 <p><% 50.times do || %>
 <i class="fa-solid fa-paw fa-bounce"></i>
 <% end %></p>
-<div= class="wrap">
+<div class="wrap">
   <div class="container">
     <% @bookings.each do |booking| %>
       <div class="row-1">
@@ -42,10 +42,10 @@
                       <p class="card-text"><strong>To:</strong> <%= booking.end_date %></p>
                       <p class="card-text"><strong>Cost:</strong> $<%= (booking.end_date - booking.start_date).to_f * booking.pad.price_per_night %></p>
                       <p class="card-text"><strong>Status:</strong>
-                      <% if booking.pending? %>
-                      <%= booking.status %>
+                      <% if booking.status.downcase == "pending" %>
+                        <p>Pending</p>
                       <% else %>
-                      <%= booking.status %>
+                        <%= booking.status %>
                       <% end  %></p>
                       <p class= btn btn><strong>Delete</strong></p>
                     </div>

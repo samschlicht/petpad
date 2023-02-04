@@ -60,3 +60,15 @@ User.create!(
   password: '123456'
 )
 puts 'created Ander Lyle!'
+
+Pad.create!(
+    user: User.last,
+    address: "Shinagawa, Tokyo",
+    title: "This is a happy space.",
+    description: "This is a second home for your pet!",
+    price_per_night: 99.00,
+    capacity: 6,
+    availability: true,
+    welcome_species: ['dogs', 'cats', 'birds', 'lizards', 'snakes']
+  )
+puts "created Ander Pad!"

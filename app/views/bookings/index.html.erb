@@ -1,4 +1,4 @@
-<p>These are your bookings, <%= current_user.first_name %>!</p>
+<h1>Here are your bookings, <%= current_user.first_name %>!</h1>
 <p><% 50.times do || %>
 <i class="fa-solid fa-paw fa-bounce"></i>
 <% end %></p>
@@ -11,12 +11,37 @@
             <div class="cards">
               <div class="card-category">
                   <div class="d-flex mb-2">
+                  <div>
                   <%= image_tag "modern-dog-kennel-au.jpg", class: "pet-image" %>
+                    <div class="div", style="float: bottom">
+                      <p><strong>Accommodates:</strong></p>
+                        <h5 style="text-align: center">
+                          <% if booking.pad.welcome_species.downcase.include? 'dogs' %>
+                            <%= '🐶'  %>
+                          <% end %>
+                          <% if booking.pad.welcome_species.downcase.include? 'lizards' %>
+                            <%= '🦎'  %>
+                          <% end %>
+                          <% if booking.pad.welcome_species.downcase.include? 'birds' %>
+                            <%= '🦜'  %>
+                          <% end %>
+                          <% if booking.pad.welcome_species.downcase.include? 'snakes' %>
+                            <%= '🐍'  %>
+                          <% end %>
+                          <% if booking.pad.welcome_species.downcase.include? 'cats' %>
+                            <%= '🐈'  %>
+                          <% end %>
+                        </h5>
+                      </div>
+                      </div>
                     <div>
-                      <p>Name: <%= booking.pad.title.capitalize %></p>
-                      <p>Address: <%= booking.pad.address %></p>
-                      <p>Comment: <%= booking.comment %></p>
-                      <p>Status: <%= booking.status %> Pending...</p>
+                      <p class="card-text"><strong>Name:</strong> <%= booking.pad.title.capitalize %></p>
+                      <p class="card-text"><strong>Address:</strong> <%= booking.pad.address %></p>
+                      <p class="card-text"><strong>Comment:</strong> <%= booking.comment %></p>
+                      <p class="card-text"><strong>From:</strong> <%= booking.start_date %></p>
+                      <p class="card-text"><strong>To:</strong> <%= booking.end_date %></p>
+                      <p class="card-text"><strong>Cost:</strong> $<%= (booking.end_date - booking.start_date).to_f * booking.pad.price_per_night %></p>
+                      <p class= btn btn><strong>Status:</strong> <%= booking.status %> <strong>Pending...</strong></p>
                     </div>
                   </div>
 

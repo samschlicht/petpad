@@ -5,17 +5,15 @@ class Petsitter::BookingsController < ApplicationController
   end
 
   def update
-    @booking = Booking.find(params[:id])
-    if @booking.update(booking_params)
-      # redirect_to # up to you...
-    else
-      # render # where was the booking update form?
-    end
   end
 
-private
+  private
+
   def booking_params
     params.require(:booking).permit(:status, :start_time, :end_time)
   end
 
+  def booking_policy_authorize
+    authorize @booking
+  end
 end

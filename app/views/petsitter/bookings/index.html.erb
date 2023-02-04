@@ -1,25 +1,34 @@
-<p> Manage bookings </p>
-<% if @bookings.length > 0 %>
-<ul> <% @bookings.each do |booking| %>
-<li> <% if booking.pending? %>
-  <!-- Display Forms-->
-<% else %>
-  <!-- Display Status-->
-  <p class='booking-tag'><%= booking.status %></p>
-<% end %> </li>
-<div class="d-flex">
-  <%= simple_form_for booking do |f| %>
-    <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
-    <%= f.submit 'Accept', class: 'btn btn-info' %>
-  <% end %>
+<p><% 50.times do || %>
+<i class="fa-solid fa-paw fa-bounce"></i>
+<% end %></p>
 
-  <%= simple_form_for booking do |f| %>
-    <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
-    <%= f.submit 'Reject', class: 'btn btn-light' %>
+<div class="bookings">
+  <% @bookings.each do |booking| %>
+    <div class="cards">
+      <div class='booking-left'>
+        <div class="booking-info">
+          <div class="booking-info-title">
+            <%= booking.user.first_name %>
+          </div>
+          <div class="booking-info-details">
+            <%= booking.start_date.strftime('%l:%M %p') %> - <%= booking.end_date.strftime('%l:%M %p') %>
+          </div>
+        </div>
+      </div>
+      <div class="booking-actions">
+        <% if booking.pending? %>
+          <%= simple_form_for booking do |f| %>
+            <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
+            <%= f.submit 'Accept', class: 'btn btn-info' %>
+          <% end %>
+          <%= simple_form_for booking do |f| %>
+            <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
+            <%= f.submit 'Reject', class: 'btn btn-light' %>
+          <% end %>
+        <% else %>
+          <p class='booking-tag'><%= booking.status %></p>
+        <% end %>
+      </div>
+    </div>
   <% end %>
 </div>
-
-<% end %> </ul>
-<% else  %>
-<p> You have no bookings 🥲 </p>
-<% end %>

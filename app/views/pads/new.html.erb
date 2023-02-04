@@ -8,7 +8,10 @@
           <%= f.input :description, input_html: { maxlength: 150 }, hint: "Tell us about your pad — 150 characters max." %>
           <%= f.input :capacity, hint: "How many pets can you accommodate?" %>
           <%= f.input :price_per_night, as: :currency %>
-          <%= f.input :address %>
+          <%= f.input :address,
+                      input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
+                      wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
+          %>
           <%= f.input :photo, as: :file %>
           <%= f.input :welcome_species, label: 'What type of pets can you accommodate?', hint: 'E.g., dogs, snakes, cats, etc.' %>
           <%= f.input :availability, label: 'Is your pad available now?', as: :radio_buttons, hint: '(You can change this later on 😉)' %>

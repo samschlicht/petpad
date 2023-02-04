@@ -20,13 +20,10 @@
           </li>
           <% if @pet_sitter.present? %>
             <li class="nav-item">
-              <%= link_to "Manage Bookings", petsitter_bookings_path, class: "nav-link" %>
-            <li class="nav-item">
-              <%= link_to "View Bookings", bookings_path, class: "nav-link" %>
-            </li>
+              <%= link_to "Pad requests", petsitter_bookings_path, class: "nav-link" %>
           <% else %>
             <li class="nav-item">
-              <%= link_to "View Bookings", bookings_path, class: "nav-link" %>
+              <%= link_to "Bookings for my pet", bookings_path, class: "nav-link" %>
             </li>
           <% end %>
           <li class="nav-item dropdown">

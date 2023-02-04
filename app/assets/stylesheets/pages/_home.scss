@@ -1,1 +1,86 @@
-// Specific CSS for your home-page
+.home-page {
+  #hero {
+  background-image: url("https://retirement.org/peninsularegent/wp-content/uploads/2022/06/shutterstock_676830847.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  }
+
+  .card {
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 50%;
+  padding: 3rem;
+  margin: 0 auto;
+  }
+
+  h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  }
+
+  p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  }
+
+  .card-body {
+  width: 50%;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 3rem;
+  margin: 0 auto;
+  }
+
+  .review-section {
+  font-size: 1.5rem;
+  color: #ff00e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  }
+
+  .review-section i {
+  margin-right: 0.5rem;
+  align-items: center;
+  }
+
+  .bottom-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
+  .bottom-section-images {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 20px;
+  }
+
+  img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    margin-right: 20px;
+    justify-content: center;
+
+  }
+
+  .testimonial {
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    }
+
+  .trustpilot {
+    padding: 1rem
+  }
+}

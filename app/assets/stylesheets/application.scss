@@ -17,6 +17,16 @@
 @import "components/navbar";
 @import "pages/show";
 @import "components/price-circle";
+@import "pages/home";
+
+.happy-pets {
+  font-family: 'Roboto', sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-top: 20px;
+  }
 
 
 //// petpad colour palette

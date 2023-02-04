@@ -65,23 +65,23 @@ class PadsController < ApplicationController
   def destroy
   end
 
-  def welcome_species(pad)
-    if pad.welcome_species.include? 'dogs'
-      '🐶'
-    end
-    if pad.welcome_species.include? 'snakes'
-      '🐍'
-    end
-    if pad.welcome_species.include? 'lizards'
-      '🦎'
-    end
-    if pad.welcome_species.include? 'birds'
-      '🦜'
-    end
-    if pad.welcome_species.include? 'cats'
-      '🐈'
-    end
-  end
+  # def welcome_species(pad)
+  #   if pad.welcome_species.include? 'dogs'
+  #     '🐶'
+  #   end
+  #   if pad.welcome_species.include? 'snakes'
+  #     '🐍'
+  #   end
+  #   if pad.welcome_species.include? 'lizards'
+  #     '🦎'
+  #   end
+  #   if pad.welcome_species.include? 'birds'
+  #     '🦜'
+  #   end
+  #   if pad.welcome_species.include? 'cats'
+  #     '🐈'
+  #   end
+  # end
 
   private
 

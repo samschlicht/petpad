@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_pet_sitter
+
 
   include Pundit::Authorization
 
@@ -15,6 +17,10 @@ class ApplicationController < ActionController::Base
 
     # For additional in app/views/devise/registrations/edit.html.erb
     devise_parameter_sanitizer.permit(:account_update, keys: %i[first_name last_name photo])
+  end
+
+  def set_pet_sitter
+    @pet_sitter = Pad.find_by(user_id: current_user.id) if user_signed_in?
   end
 
   private

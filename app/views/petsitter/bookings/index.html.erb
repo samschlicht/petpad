@@ -1,7 +1,12 @@
 <p> Manage bookings </p>
 <% if @bookings.length > 0 %>
 <ul> <% @bookings.each do |booking| %>
-<li> <%= booking %> </li>
+<li> <% if booking.pending? %>
+  <!-- Display Forms-->
+<% else %>
+  <!-- Display Status-->
+  <p class='booking-tag'><%= booking.status %></p>
+<% end %> </li>
 <div class="d-flex">
   <%= simple_form_for booking do |f| %>
     <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>

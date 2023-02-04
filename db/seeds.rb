@@ -52,23 +52,23 @@ puts 'created 10 pets for the 10 users!'
   )
 end
 puts 'created 10 pads for the 10 users!'
-
-User.create!(
-  first_name: 'Ander',
-  last_name: 'Lyle',
-  email: 'email@gmail.com',
-  password: '123456'
-)
-puts 'created Ander Lyle!'
-
-Pad.create!(
-    user: User.last,
-    address: "Shinagawa, Tokyo",
-    title: "This is a happy space.",
-    description: "This is a second home for your pet!",
-    price_per_night: 99.00,
-    capacity: 6,
-    availability: true,
-    welcome_species: ['dogs', 'cats', 'birds', 'lizards', 'snakes']
-  )
-puts "created Ander Pad!"
+#
+# User.create!(
+  # first_name: 'Ander',
+  # last_name: 'Lyle',
+  # email: 'email@gmail.com',
+  # password: '123456'
+# )
+# puts 'created Ander Lyle!'
+#
+# Pad.create!(
+    # user: User.last,
+    # address: "Shinagawa, Tokyo",
+    # title: "This is a happy space.",
+    # description: "This is a second home for your pet!",
+    # price_per_night: 99.00,
+    # capacity: 6,
+    # availability: true,
+    # welcome_species: ['dogs', 'cats', 'birds', 'lizards', 'snakes']
+  # )
+# puts "created Ander Pad!"

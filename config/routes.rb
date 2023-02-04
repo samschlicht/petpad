@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: "pads#index"
   get "/about", to: "pages#about"
   get "/pages/user_profile", to: "pages#user_profile"
+  get '/home', to: 'pages#home'
+
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :pads do

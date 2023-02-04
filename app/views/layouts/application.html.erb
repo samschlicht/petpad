@@ -14,7 +14,7 @@
   </head>
 
   <body>
-    <%= render "shared/banner" %>
+    <%= render 'shared/banner' unless @disable_banner %>
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
     <div class="container py-3">

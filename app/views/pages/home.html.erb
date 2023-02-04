@@ -1,1 +1,45 @@
-<h1>Pages#home</h1>
+
+<div class="home-page">
+  <div class="hero-section" id="hero">
+    <div class="container text-center">
+        <div class="card-body">
+          <h1 class="hero-section-title">Welcome to PetPad</h1>
+          <p class="hero-section-text">Connecting pet owners and pet sitters since 2023</p>
+          <div class="hero-section-buttons">
+            <%= link_to "Find a Pad", pads_path, class: "btn btn-primary mr-3" %>
+            <%= link_to "Become a Sitter", new_pad_path, class: "btn btn-secondary" %>
+            <div class="review-section">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <span class="trustpilot">(123 reviews on Trustpilot)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <p class="happy-pets">100k+ happy pets and pet owners</p>
+        <div class="row">
+
+        <div class="col card">
+        <img src="https://cdn.trustedhousesitters.com/static/1647da1f3504c649374c.png">
+        <h1>Better for pet owner</h1>
+          <p>Pet parents get real peace of mind knowing their pets (and home) are cared for while they’re away.</p>
+        </div>
+
+        <div class="col card">
+        <img src="https://cdn.trustedhousesitters.com/static/0eb085c28d081d3b124a.png">
+        <h1>Better for pets</h1>
+        <p>Pets stay happy at home with a sitter who gives them loving care and companionship.</p>
+        </div>
+
+        <div class="col card">
+        <img src="https://3.bp.blogspot.com/-qaAGmmzM2Dc/V-xOJml_LAI/AAAAAAAACD8/Jis5OserIGswJ2L9F2g-pHB4xL3Sd4IZQCLcB/s640/men-dogs-psychology.jpg">
+        <h1>Better for sitters</h1>
+        <p>Sitters exchange their time, care and expertise for interesting homestays and unique travel experiences.</p>
+
+        </div>
+    </div>
+  </div>
+</div>
